@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamerKit.shop - Amplify Your Reach in the Gaming World</title>
+    <style>
+        /* --- General Styles & Variables --- */
+        :root {
+            --primary-color: #4A90E2; /* A strong, techy blue */
+            --secondary-color: #50E3C2; /* A vibrant accent teal/green */
+            --dark-bg: #12121c; /* A very dark blue/purple */
+            --light-bg: #1A1A2E; /* A slightly lighter card background */
+            --text-color: #EAEAEA;
+            --text-muted: #a0a0b0;
+        }
+
+        /* --- Reset & Base --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--secondary-color);
+        }
+
+        /* --- Header & Navigation --- */
+        .header {
+            background-color: rgba(18, 18, 28, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--light-bg);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(18, 18, 28, 0.7), rgba(18, 18, 28, 0.9)), url('https://images.unsplash.com/photo-1542751371-35cf816b3fdd?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--text-muted);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #3a7bc8;
+            transform: translateY(-2px);
+        }
+
+        /* --- Services Section --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--light-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #2a2a4a;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .service-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+        }
+
+        /* --- Partners Section --- */
+        #partners {
+            background-color: var(--light-bg);
+        }
+
+        .partners-list {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .partner-item a {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .partner-item a:hover {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        /* --- Testimonials Section --- */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--light-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .testimonial-card p.quote {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card p.author {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .testimonial-card span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: normal;
+        }
+
+        /* --- Contact Section --- */
+        #contact {
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .contact-content p {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .contact-info a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--dark-bg);
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid var(--light-bg);
+        }
+
+        .footer p {
+            color: var(--text-muted);
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .nav-links {
+                margin-top: 15px;
+            }
+            .nav-links li {
+                margin: 0 10px;
+            }
+            .hero {
+                height: auto;
+                padding: 100px 0;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#" class="logo">GamerKit<span>.shop</span></a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#partners">Partners</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Amplify Your Reach in the Gaming World</h1>
+                <p>We connect innovative brands with engaged gaming audiences through strategic media partnerships, influencer marketing, and authentic content creation.</p>
+                <a href="#contact" class="cta-button">Let's Collaborate</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Strategic Influencer Campaigns</h3>
+                    <p>We identify and partner with the right content creators—from micro-influencers to esports stars—to deliver your brand's message authentically. We manage everything from negotiation to content approval and performance tracking.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Content Creation & Syndication</h3>
+                    <p>Our team helps you craft compelling content that resonates with gamers. Whether it's sponsored streams, dedicated video reviews, or social media content, we ensure your brand is part of the conversation, not just an interruption.</p>
+                </div>
+                <div class="service-card">
+                    <h3>PR & Media Outreach</h3>
+                    <p>Get your story featured. We leverage our network of gaming journalists, news sites, and media outlets to secure positive press coverage, product reviews, and interviews, building credibility and awareness for your brand.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Event & Tournament Sponsorships</h3>
+                    <p>Make a lasting impression by integrating your brand into the fabric of the gaming community. We facilitate sponsorships for online tournaments, LAN events, and community meetups, maximizing your brand's visibility and engagement.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section id="partners">
+            <div class="container">
+                <h2>Our Trusted Partners</h2>
+                <div class="partners-list">
+                    <div class="partner-item">
+                        <a href="https://ua.radio.fm/" target="_blank" rel="noopener noreferrer">Radio FM Ukraine</a>
+                    </div>
+                    <div class="partner-item">
+                        <a href="https://creativecommons.org/" target="_blank" rel="noopener noreferrer">Creative Commons</a>
+                    </div>
+                    <div class="partner-item">
+                        <a href="https://lootzone.pro/" target="_blank" rel="noopener noreferrer">LootZone</a>
+                    </div>
+                    <div class="partner-item">
+                        <a href="https://shotam.news/" target="_blank" rel="noopener noreferrer">ShoTam News</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="quote">"GamerKit.shop completely transformed our launch strategy. Their influencer connections are top-notch, and they helped our indie game get the visibility it deserved. The results exceeded all our expectations!"</p>
+                    <p class="author">Jane Doe <span>- CEO, Pixelated Dreams Studio</span></p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"Working with GamerKit has been a seamless experience. They understand the gaming hardware market inside and out. The PR campaign they ran for our new mouse led to features in three major tech publications."</p>
+                    <p class="author">Mike Smith <span>- Marketing Director, GearUp Peripherals</span></p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"As an esports team, finding the right sponsors is crucial. GamerKit.shop connected us with brands that genuinely align with our values, resulting in authentic and successful partnerships."</p>
+                    <p class="author">Alex Chen <span>- Manager, Vortex Vipers Esports</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container contact-content">
+                <h2>Ready to Level Up Your Brand?</h2>
+                <p>Let's talk about how we can build powerful media partnerships to achieve your goals. Reach out to us to start the conversation.</p>
+                <div class="contact-info">
+                    <a href="mailto:partnerships@gamerkit.shop">partnerships@gamerkit.shop</a>
+                    <span>&nbsp;•&nbsp;</span>
+                    <a href="tel:+15551234263">+1 (555) 123-4263</a>
+                </div>
+                <a href="mailto:partnerships@gamerkit.shop" class="cta-button">Get In Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 gamerkit.shop. All Rights Reserved. | <a href="https://factarium.club/">factarium.club</a></p> 
+        </div>
+    </footer>
+
+</body>
+</html>
